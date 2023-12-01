@@ -135,7 +135,7 @@ def get_model(ckpt_name, device='cuda'):
 
 
 if __name__ == '__main__':
-    model = get_model("./Pretrain/checkpoint_SPMM_20m.ckpt", device='cuda')
+    model = get_model("./Pretrain/checkpoint_SPMM.ckpt", device='cuda')
 
     print(model(mode='p2s', p2s_prop=calculate_property('COc1cccc(NC(=O)CN(C)C(=O)COC(=O)c2cc(c3cccs3)nc3ccccc23)c1'), p2s_mask=torch.zeros(53), stochastic=True, k=2, n_sample=50))
     print("="*100)
