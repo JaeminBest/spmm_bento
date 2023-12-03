@@ -17,6 +17,7 @@ python:
     - "tqdm"
     - "transformers==4.30.1"
     - "git+https://github.com/MolecularAI/pysmilesutils.git"
+    - "pydantic"
 docker:
   distro: debian
   python_version: "3.10"
