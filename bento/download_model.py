@@ -17,3 +17,20 @@ bentoml.pytorch.save_model(
     "spmm",   # Model name in the local Model Store
     model,  # Model instance being saved
 )
+
+def get_pv_and_mask(property_name: str, value: int):
+    p2i = dict()
+    with open('./property_name.txt', 'r') as f:
+        lines = f.readlines()
+    for i, l in enumerate(lines):
+        p2i[l.strip()] = i
+    pv = np.zeros(53)
+    mask = np.ones(53)
+    pv[p2i[property_name]] = value
+    mask[p2i[property_name]] = 0
+    return dict(pv=pv, mask=mask)
+
+saved_model = bentoml.picklable_model.save_model(
+    'get_pv_and_mask',
+    get_pv_and_mask,
+)
