@@ -6,4 +6,5 @@ rdkit==2023.3.1
 torch==1.12.1
 tqdm==4.65.0
 transformers==4.30.1
-pysmilesutils
+git+https://github.com/MolecularAI/pysmilesutils.git
+pydantic
